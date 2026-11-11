@@ -1,7 +1,7 @@
 // 共通の小道具と、画面の切り替え
 (function (g) {
   const HK = g.HK = g.HK || {};
-  HK.VERSION = '1.1.0';
+  HK.VERSION = '1.1.1';
 
   HK.$ = id => document.getElementById(id);
   HK.sleep = ms => new Promise(r => setTimeout(r, ms));

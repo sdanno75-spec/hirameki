@@ -23,6 +23,7 @@
   };
 
   HK.rewrite = async function (ep, run) {
+    return; // モニター廃止に合わせて、書き換えの演出もなし
     HK.monitor.stop();
     const rw = ep.rewrite;
     const t = $('ticker');

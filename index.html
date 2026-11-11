@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>数学者のひらめき</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="bg"></div>
+<div id="app">
+
+  <!-- タイトル -->
+  <section id="s-title" class="screen active">
+    <div class="title-wrap">
+      <div class="brand">MATHEMATICIANS' HIRAMEKI</div>
+      <h1 class="title">数学者のひらめき</h1>
+      <p class="sub">公式は、困った人がその場で思いついたものだった。</p>
+      <button class="qr" id="btnStart">はじめる</button>
+      <div class="foot" id="verLabel"></div>
+    </div>
+  </section>
+
+  <!-- 話の一覧 -->
+  <section id="s-list" class="screen">
+    <div class="list-wrap">
+      <div class="list-head">
+        <button class="back" id="btnListBack" aria-label="タイトルへ戻る"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <h2>話を選ぶ</h2>
+        <button class="speed" id="btnSpeed" aria-label="会話の速さ"></button>
+      </div>
+      <div id="epList"></div>
+    </div>
+  </section>
+
+  <!-- 話 -->
+  <section id="s-play" class="screen">
+    <div id="stage">
+      <div class="ph-layer" id="phCrisis"></div>
+      <div class="ph-layer" id="phSolved"></div>
+      <div class="ph-cap" id="phCap"></div>
+      <div class="st-ov" id="stOv">
+        <div class="glitch"></div>
+        <div class="gtext">SIGNAL INTERRUPT<br>— UNKNOWN USER —</div>
+        <div class="stage-holo">
+          <div class="beam"></div>
+          <div class="holo" id="holoBust"></div>
+          <div class="pad"></div>
+          <div class="nameplate"><b id="npName"></b><span id="npSub"></span></div>
+        </div>
+      </div>
+    </div>
+    <div id="pane">
+      <header class="bar">
+        <button class="back" id="btnBack" aria-label="話の一覧へ戻る"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <div class="hd-title"><b id="hdTitle"></b><span id="hdSys"></span></div>
+        <div class="hd-holo" id="hdHolo"></div>
+        <span class="chip run" id="chip">RUNNING</span>
+      </header>
+      <div class="monitor" id="mon">
+        <div class="m-top"><span id="mTask"></span><span><b id="mPct">0%</b></span></div>
+        <div class="pbar"><i id="mBar"></i></div>
+        <div class="metric"><span id="mLabel"></span><b id="mVal"></b></div>
+        <div class="ticker" id="ticker"></div>
+      </div>
+      <div class="chat" id="chat"></div>
+      <div class="dock" id="dock"></div>
+    </div>
+  </section>
+
+  <!-- エピローグ -->
+  <section id="s-epi" class="screen">
+    <div class="epi-wrap" id="epiWrap"></div>
+  </section>
+</div>
+
+<script src="js/core.js"></script>
+<script src="js/judge.js"></script>
+<script src="js/faq-common.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/stage.js"></script>
+<script src="js/monitor.js"></script>
+<script src="js/puzzle.js"></script>
+<script src="js/parts.js"></script>
+<script src="js/panels.js"></script>
+<script src="js/epilogue.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/runner.js"></script>
+<script src="episodes/napier.js"></script>
+<script src="episodes/negative.js"></script>
+<script src="episodes/sqrt.js"></script>
+<script src="episodes/gauss-sum.js"></script>
+<script src="js/selftest.js"></script>
+<script>
+  HK.$('verLabel').textContent = 'v' + HK.VERSION;
+  HK.$('btnStart').onclick = () => { location.hash = 'list'; };
+  HK.$('btnListBack').onclick = () => { location.hash = ''; };
+  HK.$('btnBack').onclick = () => { location.hash = 'list'; };
+  window.addEventListener('hashchange', HK.route);
+  HK.route();
+</script>
+</body>
+</html>

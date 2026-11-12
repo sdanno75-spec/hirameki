@@ -25,7 +25,7 @@
       { t: 'say', who: 'me', text: '一辺 × 一辺 ＝ 2 になる長さか…。すぐ出せそうです。' },
       { t: 'say', who: 'me', text: '1.4 × 1.4 = 1.96。1.41 × 1.41 = 1.9881。1.42 × 1.42 = 2.0164…' },
       { t: 'say', who: 'me', text: 'あれ？ どれもぴったり 2 にならない…' },
-      { t: 'photo', who: 'me', src: 'img/sqrt/trial.jpg', text: '桁を増やしても、ずっとこの調子です…' },
+      { t: 'photo', who: 'me', src: 'img/sqrt/trial.webp', text: '桁を増やしても、ずっとこの調子です…' },
       { t: 'say', who: 'col', text: 'ふむ…。でも、ほとんど 2 じゃないか。どれかで送ってしまえば？' },
       { t: 'talk', id: 'feel' },
       { t: 'say', who: 'col', text: 'はがき 1 枚分のすき間か、はみ出しか…。お客さんは、きっと気づくな。' },

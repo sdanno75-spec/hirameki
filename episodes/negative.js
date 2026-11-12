@@ -27,7 +27,7 @@
       { t: 'say', who: 'col', text: 'うそでしょ…。じゃあ帳簿の「もうけ」の欄、なんて書くの？' },
       { t: 'say', who: 'me', text: '式はこう。もうけ ＝ 売上 − 仕入れ ＝ 100円 × 50食 − 8,000円' },
       { t: 'say', who: 'me', text: 'つまり 5,000 − 8,000 = …　小さい数から大きい数は、引けない…' },
-      { t: 'photo', who: 'me', src: 'img/negative/ledger.jpg', text: '書いては消して…もう 5 回目。' },
+      { t: 'photo', who: 'me', src: 'img/negative/ledger.webp', text: '書いては消して…もう 5 回目。' },
       { t: 'say', who: 'col', text: '3,000円がどこにも書けないと、報告書の合計が合わないよ…。' },
       { t: 'say', who: 'col', text: '先生に出す報告、今日までなんだよね。どうする？' },
       { t: 'talk', id: 'plea' },

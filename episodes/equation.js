@@ -6,8 +6,8 @@
     person: {
       name: 'アル＝フワーリズミー', short: 'フワーリズミー', en: 'AL-KHWARIZMI', years: '780ごろ – 850ごろ', country: 'バグダード',
       role: '数学者・天文学者', faceUnknown: true,
-      img: 'img/equation/portrait.jpg',
-      bust: { pos: '50% 38%', size: '155%' }, face: { pos: '54% 20%', size: '384%' },
+      img: 'img/equation/portrait.webp',
+      bust: { pos: '56% 30%', size: '155%' }, face: { pos: '56% 29%', size: '320%' },
     },
     photos: {
       crisis: { src: 'img/equation/crisis.jpg', caption: '注文画面と見積書を前に頭を抱える生徒たち' },

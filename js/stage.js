@@ -53,7 +53,7 @@
       $('phCap').textContent = 'LIVE ─ ' + (ep.genre || '');
       $('holoBust').innerHTML = HK.portrait(ep, 'bust');
       $('hdHolo').innerHTML = HK.portrait(ep, 'face');
-      $('npName').textContent = (ep.person && ep.person.en) || '';
+      $('npName').textContent = (ep.person && ep.person.name) || '';
       $('npSub').textContent = ep.person ? `${ep.person.years} ／ ${ep.person.country}` : '';
     },
     alarm() { $('phCap').className = 'ph-cap err'; },

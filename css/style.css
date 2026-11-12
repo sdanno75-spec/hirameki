@@ -221,7 +221,7 @@ header.bar{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bot
 @keyframes beam{50%{opacity:.6}}
 .pad{width:70%;height:22px;border-radius:50%;border:2px solid var(--cyan);box-shadow:0 0 24px var(--cyan),inset 0 0 16px var(--cyan);margin-top:-6px;z-index:1}
 .nameplate{margin-top:16px;text-align:center;font-family:var(--mono)}
-.nameplate b{display:block;color:var(--cyan);letter-spacing:.3em;font-size:16px}
+.nameplate b{display:block;color:var(--cyan);letter-spacing:.08em;font-size:16px;font-family:inherit}
 .nameplate span{color:var(--muted);font-size:12px}
 .hd-holo{width:34px;height:34px;display:none;overflow:hidden;border-radius:6px;border:1px solid var(--cyan);box-shadow:0 0 10px var(--cyan);background:#06202a}
 .hd-holo.on{display:block;animation:fadein .6s}

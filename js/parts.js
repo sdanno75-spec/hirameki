@@ -133,31 +133,75 @@
   }
 
   // ---------- 天秤（両側に同じ操作） ----------
+  // cfg.left / cfg.right：皿にのせるもの [{id, t, sub, k:'x'|'w'}]
+  // 正しい操作 {ok:true, left, right, msg}／まちがい {ok:false, left?, right?, tilt, msg}
   async function balance(cfg, run, resolve) {
     const d = $('dock');
     d.innerHTML = `<div class="puzzle"><div class="pz-label">${HK.esc(cfg.head)}</div>
       <div class="ins-q">${cfg.q}</div>
-      <div class="bal"><div class="bal-beam" id="beam"><div class="pan" id="panL"></div><div class="pan" id="panR"></div></div><div class="bal-post"></div></div>
+      <div class="bal2" id="bal">
+        <div class="b2-beam" id="beam"><i class="b2-pin"></i></div>
+        <div class="b2-side l" id="sideL"><svg class="b2-str" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="50" y1="0" x2="1" y2="100"/><line x1="50" y1="0" x2="99" y2="100"/></svg><div class="b2-items" id="panL"></div><div class="b2-dish"></div></div>
+        <div class="b2-side r" id="sideR"><svg class="b2-str" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="50" y1="0" x2="1" y2="100"/><line x1="50" y1="0" x2="99" y2="100"/></svg><div class="b2-items" id="panR"></div><div class="b2-dish"></div></div>
+        <div class="b2-post"></div><div class="b2-base"></div>
+        <div class="b2-eq" id="beq"></div>
+      </div>
       <div class="cnt" id="cnt"></div><div class="eqline" id="eql"></div><div class="btnrow ops" id="pBtn"></div></div>`;
-    const show = (l, r) => { $('panL').innerHTML = l; $('panR').innerHTML = r; };
-    show(cfg.left, cfg.right);
+    const item = it => `<div class="b2-it ${it.k || 'w'}" data-id="${HK.esc(it.id)}"><b>${HK.esc(it.t)}</b>${it.sub ? `<small>${HK.esc(it.sub)}</small>` : ''}</div>`;
+    const sideText = arr => arr.map(it => it.eq || it.t).join(' ＋ ');
+    let cur = { left: cfg.left, right: cfg.right };
+    // 皿の中身を入れ替える：消えるものはふわっと消し、新しいものは出てくる
+    async function setPan(id, arr) {
+      const box = $(id);
+      const keep = new Set(arr.map(a => a.id));
+      const gone = [...box.children].filter(e => !keep.has(e.dataset.id));
+      gone.forEach(e => e.classList.add('out'));
+      if (gone.length) await HK.sleep(450);
+      const old = new Set([...box.children].map(e => e.dataset.id));
+      box.innerHTML = arr.map(item).join('');
+      [...box.children].forEach(e => { if (!old.has(e.dataset.id)) e.classList.add('in'); });
+    }
+    const tilt = deg => {
+      $('beam').style.transform = `rotate(${deg}deg)`;
+      const dy = Math.sin(deg * Math.PI / 180) * $('bal').clientWidth * 0.34;
+      $('sideL').style.transform = `translateY(${-dy}px)`;
+      $('sideR').style.transform = `translateY(${dy}px)`;
+    };
+    const eq = (l, r, ok) => { $('beq').innerHTML = `${HK.esc(sideText(l))} <em class="${ok ? 'ok' : 'ng'}">${ok ? '＝' : '≠'}</em> ${HK.esc(sideText(r))}`; };
+    await setPan('panL', cur.left); await setPan('panR', cur.right);
+    eq(cur.left, cur.right, true);
     for (const st of cfg.steps) {
       await new Promise(res => {
         const br = $('pBtn');
         br.innerHTML = st.choices.map((c, i) => `<button class="qr" data-i="${i}">${HK.esc(c.btn)}</button>`).join('');
+        let busy = false;
         br.querySelectorAll('button').forEach(b => b.onclick = async () => {
+          if (busy) return;
+          busy = true;
           const c = st.choices[+b.dataset.i];
+          br.querySelectorAll('button').forEach(x => x.disabled = true);
           if (!c.ok) {
-            $('beam').style.transform = 'rotate(' + (c.tilt || 8) + 'deg)';
-            $('cnt').innerHTML = c.msg || '傾いた！';
-            await HK.sleep(1600);
-            $('beam').style.transform = '';
+            const l = c.left || cur.left, r = c.right || cur.right;
+            await setPan('panL', l); await setPan('panR', r);
+            tilt(c.tilt || 10);
+            eq(l, r, false);
+            $('cnt').innerHTML = `<span class="ng">${c.msg || '傾いた！'}</span>`;
+            await HK.sleep(1800);
+            if (!HK.alive(run)) return;
+            tilt(0);
+            await setPan('panL', cur.left); await setPan('panR', cur.right);
+            eq(cur.left, cur.right, true);
+            $('cnt').innerHTML = 'もとに戻した。もう一度やってみよう';
+            br.querySelectorAll('button').forEach(x => x.disabled = false);
+            busy = false;
             return;
           }
           br.innerHTML = '';
-          show(c.left, c.right);
-          $('cnt').innerHTML = c.msg || '釣り合ったまま！';
-          await W(900); res();
+          await setPan('panL', c.left); await setPan('panR', c.right);
+          cur = { left: c.left, right: c.right };
+          eq(cur.left, cur.right, true);
+          $('cnt').innerHTML = `<span class="ok">${c.msg || 'つり合ったまま！'}</span>`;
+          await W(1000); res();
         });
       });
       if (!HK.alive(run)) return;

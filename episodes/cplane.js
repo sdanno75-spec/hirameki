@@ -8,7 +8,7 @@
       name: 'カスパー・ヴェッセル', short: 'ヴェッセル', en: 'CASPAR WESSEL', years: '1745 – 1818', country: 'デンマーク・ノルウェー',
       role: '測量技師・数学者', faceUnknown: true,
       img: 'img/cplane/portrait.webp',
-      bust: { pos: '50% 30%', size: '155%' }, face: { pos: '54% 24%', size: '320%' },
+      bust: { pos: '56% 18%', size: '155%' }, face: { pos: '53% 12%', size: '320%' },
     },
     photos: {
       crisis: { src: 'img/cplane/crisis.webp', caption: '電池の切れたノートPCを前に焦るロボット部員' },

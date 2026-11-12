@@ -7,12 +7,12 @@
     person: {
       name: 'ルネ・デカルト', short: 'デカルト', en: 'RENÉ DESCARTES', years: '1596 – 1650', country: 'フランス',
       role: '哲学者・数学者',
-      img: 'img/coordinate/portrait.jpg',
-      bust: { pos: '50% 38%', size: '155%' }, face: { pos: '54% 20%', size: '384%' },
+      img: 'img/coordinate/portrait.webp',
+      bust: { pos: '50% 30%', size: '155%' }, face: { pos: '53% 21%', size: '320%' },
     },
     photos: {
-      crisis: { src: 'img/coordinate/crisis.jpg', caption: '木にめり込んだ宝箱の画面を前に頭を抱える生徒たち' },
-      solved: { src: 'img/coordinate/solved.jpg', caption: '文化祭でゲームに並ぶお客さん' },
+      crisis: { src: 'img/coordinate/crisis.webp', caption: '木にめり込んだ宝箱の画面を前に頭を抱える生徒たち' },
+      solved: { src: 'img/coordinate/solved.webp', caption: '文化祭でゲームに並ぶお客さん' },
     },
     colleague: { name: 'プログラム担当の友だち', short: 'プ' },
     monitor: { sys: 'GAME STUDIO' },

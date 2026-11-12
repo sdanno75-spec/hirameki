@@ -274,6 +274,49 @@
     doneBtn(cfg.done, resolve);
   }
 
+  // ---------- × i で回す（複素数平面） ----------
+  // cfg.start: [x, y]、cfg.times: 回す回数
+  async function rotate(cfg, run, resolve) {
+    const d = $('dock');
+    const R = 4, S = 26, C = R * S + 8, W2 = C * 2;
+    const px = x => C + x * S, py = y => C - y * S;
+    const fmt = (a, b) => {
+      const re = a === 0 ? '' : String(a).replace('-', '−');
+      if (b === 0) return re || '0';
+      const im = (Math.abs(b) === 1 ? '' : Math.abs(b)) + 'i';
+      return re ? `${re} ${b < 0 ? '−' : '＋'} ${im}` : (b < 0 ? '−' : '') + im;
+    };
+    let lines = '';
+    for (let k = -R; k <= R; k++) lines += `<line x1="${px(k)}" y1="${py(-R)}" x2="${px(k)}" y2="${py(R)}" class="${k === 0 ? 'ax' : ''}"/><line x1="${px(-R)}" y1="${py(k)}" x2="${px(R)}" y2="${py(k)}" class="${k === 0 ? 'ax' : ''}"/>`;
+    const [x0, y0] = cfg.start;
+    d.innerHTML = `<div class="puzzle"><div class="pz-label">${HK.esc(cfg.head)}</div>
+      <div class="ins-q">${cfg.q}</div>
+      <svg class="cpl" viewBox="0 0 ${W2} ${W2}">${lines}
+        <text x="${px(R) - 4}" y="${py(0) - 6}" class="lb" text-anchor="end">実部</text><text x="${px(0) + 6}" y="${py(R) + 12}" class="lb">虚部 i</text>
+        <g id="trail"></g>
+        <g id="arm" style="transform-origin:${C}px ${C}px"><line x1="${C}" y1="${C}" x2="${px(x0)}" y2="${py(y0)}" class="arm"/><circle cx="${px(x0)}" cy="${py(y0)}" r="6" class="tip"/></g>
+        <circle cx="${C}" cy="${C}" r="4" class="o"/></svg>
+      <div class="cnt" id="cnt"></div><div class="eqline" id="eql"></div><div class="btnrow ops" id="pBtn"></div></div>`;
+    let a = x0, b = y0, k = 0;
+    const show = (prev) => { $('cnt').innerHTML = prev ? `(${fmt(prev[0], prev[1])}) × i ＝ <b>${fmt(a, b)}</b>　→　点 (${a}, ${b})` : `いまの点：<b>${fmt(a, b)}</b>　→　点 (${a}, ${b})`; };
+    show();
+    for (let t = 0; t < (cfg.times || 4); t++) {
+      await nextBtn('× i する');
+      if (!HK.alive(run)) return;
+      const prev = [a, b];
+      $('trail').insertAdjacentHTML('beforeend', `<circle cx="${px(a)}" cy="${py(b)}" r="4" class="ghost"/>`);
+      [a, b] = [-b, a];
+      k++;
+      $('arm').style.transform = `rotate(${-90 * k}deg)`;
+      await HK.sleep(750);
+      show(prev);
+    }
+    await W(500);
+    $('eql').innerHTML = cfg.summary;
+    await W(900);
+    doneBtn(cfg.done, resolve);
+  }
+
   const wrap = fn => (cfg, run) => new Promise(resolve => { fn(cfg, run, resolve); });
   HK.parts = {
     calc,
@@ -283,5 +326,6 @@
     balance: wrap(balance),
     grid: wrap(grid),
     squares: wrap(squares),
+    rotate: wrap(rotate),
   };
 })();

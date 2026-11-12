@@ -1,6 +1,6 @@
 # 写真のプロンプト一覧
 
-**まだ届いていない写真：24〜27、28〜31（32 以降は、作る話が決まってからプロンプトを作る）**（画像を受け取るたびに、この一覧を最新にする）
+**まだ届いていない写真：24〜27、28〜31、72〜75（32 以降は、作る話が決まってからプロンプトを作る）**（画像を受け取るたびに、この一覧を最新にする）
 
 できた画像は、チャットにそのまま貼ってください。保存と名前の付け替え、肖像の切り出し位置の調整はこちらでやります。
 
@@ -31,6 +31,7 @@
 | 60〜63 | 複素数 | 肖像・困った・解決・エラー画面とノート | まだ（同上） |
 | 64〜67 | 積分 | 肖像・困った・解決・断面図のメモ | まだ（同上） |
 | 68〜71 | 無限等比級数 | 肖像・困った・解決・カルテのメモ | まだ（同上） |
+| 72〜75 | 複素数平面 | 肖像・困った・解決・符号のノート | まだ（アプリに入れ済み、プロンプトあり） |
 
 ---
 
@@ -156,4 +157,26 @@ Photorealistic photo, vertical 4:5. A Japanese school ground on a clear sunny af
 **31. 証拠の写真：届かないメジャー**
 ```
 A photorealistic photo looking up the thick trunk of a very tall ginkgo tree leaning after a typhoon. In the foreground on the ground, a yellow 10 m tape measure fully pulled out and lying along the soil, ending far short of anything useful, and a hand-written memo on a clipboard reading "高さ？ 20m より上？下？" with question marks. Fallen yellow leaves, overcast sky. Frustrated mood. Landscape 4:3, no faces, no logos.
+```
+
+## 複素数平面編（ロボコン）
+
+**72. 肖像：ヴェッセル**（顔はあまり記録に残っていない。18世紀の測量技師らしい姿で）
+```
+Photorealistic portrait photo, vertical 4:5, in the style of an 18th-century Danish painted portrait brought to life. Caspar Wessel, a Norwegian-Danish land surveyor and mathematician around 50, with grey powdered hair tied back, a calm precise gaze, wearing a dark blue coat with a white cravat. He sits at a wooden table with a large hand-drawn survey map, a brass compass, a surveyor's chain and a sheet of paper showing an arrow drawn on crossed axes. Soft window light. Upper body and face clearly visible, facing the viewer. No text, no watermark.
+```
+
+**73. 困った現場**
+```
+Photorealistic photo, vertical 4:5. A Japanese high school robot contest arena, a robot arm on a competition table with colored balls, two students in school uniforms and team T-shirts staring in panic at a laptop whose screen is black with a dead battery icon, one holding a notebook full of formulas, a countdown timer on a big screen behind them, spectators in the background. Tense mood. Leave some open space in the lower center of the frame. No readable text, no logos, no watermark.
+```
+
+**74. 解決**
+```
+Photorealistic photo, vertical 4:5. A Japanese high school robot contest arena, a robot arm holding a colored ball high above the competition table, the student team jumping and cheering with raised fists, confetti and bright stage lights. Joyful, triumphant mood. Leave some open space in the lower center of the frame. No readable text, no logos, no watermark.
+```
+
+**75. 証拠の写真：符号をまちがえたノート**
+```
+A photorealistic close-up of an open notebook on a robot contest workbench. Handwritten rotation formulas "x' = x cos θ − y sin θ" and "y' = x sin θ + y cos θ" with θ = 90°, a small grid sketch with the point (3, 1) and an arrow, several crossed-out answers "(1, 3)?", "(3, −1)?" and "符号どっち？" in the margin, eraser crumbs. Beside it a dead laptop and a small robot gripper part. Overhead light, anxious mood. Landscape 4:3, no faces, no logos.
 ```

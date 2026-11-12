@@ -10,8 +10,8 @@
       bust: { pos: '56% 30%', size: '155%' }, face: { pos: '56% 29%', size: '320%' },
     },
     photos: {
-      crisis: { src: 'img/equation/crisis.jpg', caption: '注文画面と見積書を前に頭を抱える生徒たち' },
-      solved: { src: 'img/equation/solved.jpg', caption: '届いたクラスTシャツを着て喜ぶ生徒たち' },
+      crisis: { src: 'img/equation/crisis.webp', caption: '注文画面と見積書を前に頭を抱える生徒たち' },
+      solved: { src: 'img/equation/solved.webp', caption: '届いたクラスTシャツを着て喜ぶ生徒たち' },
     },
     colleague: { name: '学級委員', short: '委' },
     monitor: { sys: 'ORDER DESK' },

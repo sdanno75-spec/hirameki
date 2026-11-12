@@ -147,7 +147,9 @@
         <div class="b2-eq" id="beq"></div>
       </div>
       <div class="cnt" id="cnt"></div><div class="eqline" id="eql"></div><div class="btnrow ops" id="pBtn"></div></div>`;
-    const item = it => `<div class="b2-it ${it.k || 'w'}" data-id="${HK.esc(it.id)}"><b>${HK.esc(it.t)}</b>${it.sub ? `<small>${HK.esc(it.sub)}</small>` : ''}</div>`;
+    // n があれば、小さなかたまりを n 個（more:true なら「…」をつけて、まだ数がわからない形）
+    const bricks = it => it.n ? `<div class="bk">${'<i></i>'.repeat(it.n)}${it.more ? '<em>…</em>' : ''}</div>` : '';
+    const item = it => `<div class="b2-it ${it.k || 'w'}" data-id="${HK.esc(it.id)}">${bricks(it)}<b>${HK.esc(it.t)}</b>${it.sub ? `<small>${HK.esc(it.sub)}</small>` : ''}</div>`;
     const sideText = arr => arr.map(it => it.eq || it.t).join(' ＋ ');
     let cur = { left: cfg.left, right: cfg.right };
     // 皿の中身を入れ替える：消えるものはふわっと消し、新しいものは出てくる

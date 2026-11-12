@@ -1,6 +1,6 @@
 # 写真のプロンプト一覧
 
-**まだ届いていない写真：23、24〜27、28〜31**（画像を受け取るたびに、この一覧を最新にする）
+**まだ届いていない写真：24〜27、28〜31（32 以降は、作る話が決まってからプロンプトを作る）**（画像を受け取るたびに、この一覧を最新にする）
 
 できた画像は、チャットにそのまま貼ってください。保存と名前の付け替え、肖像の切り出し位置の調整はこちらでやります。
 
@@ -18,7 +18,7 @@
 | 14 | 平方根 | 試し計算 | 済み |
 | 15 | ガウス | 足し算の集計表 | 済み |
 | 16〜19 | 方程式 | 肖像・困った・解決・試し計算 | 済み |
-| 20〜23 | 座標 | 肖像・困った・解決・付箋のマップ | 20〜22 済み、23 まだ |
+| 20〜23 | 座標 | 肖像・困った・解決・付箋のマップ | 済み |
 | 24〜27 | 三平方 | 肖像・困った・解決・縮図 | まだ |
 | 28〜31 | 相似 | 肖像・困った・解決・メジャー | まだ |
 | 32〜35 | 確率 | 肖像・困った・解決・賞金の案の紙 | まだ（プロンプトは作る話を決めてから） |
@@ -109,7 +109,7 @@ Photorealistic photo, vertical 4:5. A Japanese high school computer room in the 
 Photorealistic photo, vertical 4:5. A Japanese school festival classroom turned into a game corner, visitors and children happily playing a pixel-art adventure game on monitors, a line of people waiting, the student creators smiling and high-fiving in the foreground. Bright, joyful mood. Leave some open space in the lower center of the frame. No readable text, no logos, no watermark.
 ```
 
-**23. 証拠の写真：付箋と矢印だらけのマップ**
+**23. 証拠の写真：付箋と矢印だらけのマップ**（済み）
 ```
 A photorealistic close-up of a hand-drawn game map on graph paper: a fountain in the center, trees, a pond and small treasure chest drawings. The map is covered with colorful sticky notes and messy handwriting like "左の木の少し上？", "池の右？下？", "もっと左！", with arrows crossing each other and several erased marks. Pencils and an eraser beside it. Desk lamp light, confused mood. Landscape 4:3, no faces, no logos.
 ```

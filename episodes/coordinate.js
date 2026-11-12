@@ -22,7 +22,7 @@
       { t: 'say', who: 'me', text: 'OK。宝箱 A は「噴水の左の、木の少し上あたり」。宝箱 B は「右下の池の近く」。…' },
       { t: 'say', who: 'col', text: '入れてみた。…え、宝箱 A が木にめり込んでるんだけど。' },
       { t: 'say', who: 'me', text: 'そこじゃない！ もっと左の、もう少し上…' },
-      { t: 'photo', who: 'me', src: 'img/coordinate/sticky.jpg', text: '自分のマップも、付箋と矢印でぐちゃぐちゃに…' },
+      { t: 'photo', who: 'me', src: 'img/coordinate/sticky.webp', text: '自分のマップも、付箋と矢印でぐちゃぐちゃに…' },
       { t: 'say', who: 'col', text: 'そもそも「噴水の左」って、どこまで左？' },
       { t: 'talk', id: 'feel' },
       { t: 'say', who: 'col', text: '宝箱 12 個で、1 つにつき言い直し 3 回…。それに、明日までに宝箱をあと 30 個増やすんだって。' },

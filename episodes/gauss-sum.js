@@ -25,7 +25,7 @@
       { t: 'say', who: 'col', text: 'えっ！？ 客席はピラミッド型だから、1 列目が 1 席、2 列目が 2 席…100 列目が 100 席だよ。' },
       { t: 'say', who: 'me', text: 'つまり 1 + 2 + 3 + … + 100。順番に足していくしかない…' },
       { t: 'talk', id: 'feel' },
-      { t: 'photo', who: 'me', src: 'img/gauss-sum/tally.jpg', text: '…で、37 列目で合わなくなりました。' },
+      { t: 'photo', who: 'me', src: 'img/gauss-sum/tally.webp', text: '…で、37 列目で合わなくなりました。' },
       { t: 'say', who: 'col', text: 'どこで間違えたかわからないなら、また 1 から？ 残り 63 列もあるのに！？' },
       { t: 'say', who: 'col', text: 'お客さん、もう入口に並んでるよ。どうする？' },
       { t: 'talk', id: 'plea' },

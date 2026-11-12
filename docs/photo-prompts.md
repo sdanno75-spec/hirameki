@@ -1,6 +1,6 @@
 # 写真のプロンプト一覧
 
-**まだ届いていない写真：23、24、25、26、27**（画像を受け取るたびに、この一覧を最新にする）
+**まだ届いていない写真：23、24〜27、28〜31**（画像を受け取るたびに、この一覧を最新にする）
 
 できた画像は、チャットにそのまま貼ってください。保存と名前の付け替え、肖像の切り出し位置の調整はこちらでやります。
 
@@ -20,6 +20,7 @@
 | 16〜19 | 方程式 | 肖像・困った・解決・試し計算 | 済み |
 | 20〜23 | 座標 | 肖像・困った・解決・付箋のマップ | 20〜22 済み、23 まだ |
 | 24〜27 | 三平方 | 肖像・困った・解決・縮図 | まだ |
+| 28〜31 | 相似 | 肖像・困った・解決・メジャー | まだ |
 
 ---
 
@@ -123,4 +124,26 @@ Photorealistic photo, vertical 4:5. A Japanese fire department ladder truck in f
 **27. 証拠の写真：方眼紙の縮図**
 ```
 A photorealistic close-up of a desk in a fire command center. A sheet of graph paper with a hand-drawn scale diagram: a vertical wall labeled "12 m", a ground line labeled "5 m", and a diagonal ladder line with a ruler laid along it. Handwritten notes "13.1 m?", "12.9 m?", "届く？" with question marks. A pencil, a protractor and a radio headset beside it, blue monitor glow in the background. Tense mood. Landscape 4:3, no faces, no logos.
+```
+
+## 相似編（防災・校庭の木）
+
+**28. 肖像：タレス**（本人の顔は記録に残っていない。古代ギリシャの学者らしい姿で）
+```
+Photorealistic portrait photo, vertical 4:5, in the style of an ancient Greek philosopher brought to life. Thales of Miletus, a wise man around 60, with short grey curly hair, a neat grey beard, sun-tanned skin and curious bright eyes, wearing a simple off-white chiton with a dark blue cloak. He stands outdoors in strong afternoon sunlight beside a wooden staff stuck upright in the sand, with its long shadow on the ground and distant pyramids in the haze behind him. Upper body and face clearly visible, facing the viewer. No text, no watermark.
+```
+
+**29. 困った現場**
+```
+Photorealistic photo, vertical 4:5. A Japanese school ground the morning after a typhoon, scattered leaves and branches on the ground. A huge ginkgo tree leans dangerously toward the school gymnasium, its roots partly lifted from the soil. A middle-aged school caretaker in work clothes and two junior high students in uniforms look up at the tree with worried faces, one holding a short tape measure. Overcast sky with sun breaking through, long shadows. Leave some open space in the lower center of the frame. No readable text, no logos, no watermark.
+```
+
+**30. 解決**
+```
+Photorealistic photo, vertical 4:5. A Japanese school ground on a clear sunny afternoon. A large ginkgo tree has been safely felled and lies on the ground pointing away from the gymnasium, workers in helmets cutting it into logs. The school caretaker and two junior high students smile in relief, the gymnasium completely undamaged behind them. Bright, calm, relieved mood. Leave some open space in the lower center of the frame. No readable text, no logos, no watermark.
+```
+
+**31. 証拠の写真：届かないメジャー**
+```
+A photorealistic photo looking up the thick trunk of a very tall ginkgo tree leaning after a typhoon. In the foreground on the ground, a yellow 10 m tape measure fully pulled out and lying along the soil, ending far short of anything useful, and a hand-written memo on a clipboard reading "高さ？ 20m より上？下？" with question marks. Fallen yellow leaves, overcast sky. Frustrated mood. Landscape 4:3, no faces, no logos.
 ```

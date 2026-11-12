@@ -59,7 +59,10 @@ for (const ep of HK.episodes.values()) {
   const napAt = steps.findIndex(s => s.t === 'say' && s.who === 'nap');
   if (enterAt < 0) err(id, 'steps に enter がない');
   else if (napAt >= 0 && napAt < enterAt) err(id, '数学者が登場前にしゃべっている');
+  if (!steps.some(s => s.t === 'photo')) err(id, '困っている写真（photo）が1つもない');
   steps.forEach((s, i) => {
+    if (s.t === 'alarm' || s.t === 'rewrite') err(id, `steps[${i}] ${s.t} は使わない（骨組み 2026-11-12）`);
+    if (s.t === 'say' && /sys (warn|err)/.test(s.who)) err(id, `steps[${i}] sys warn / err は使わない`);
     if (s.t === 'talk' && !(ep.talks || {})[s.id]) err(id, `steps[${i}] talk "${s.id}" が talks にない`);
     if (s.t === 'part' && !(ep.parts || {})[s.id]) err(id, `steps[${i}] part "${s.id}" が parts にない`);
   });

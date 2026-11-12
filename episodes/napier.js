@@ -18,19 +18,7 @@
       solved: { src: 'img/napier/solved.jpg', caption: '打ち上げに歓声を上げる管制室' },
     },
     colleague: { name: 'フライトディレクター', short: 'FD' },
-    monitor: {
-      sys: 'MISSION CONTROL', task: '10桁 × 10桁 の掛け算 × 60,000回', label: '計算の完了予想', stuckAt: 31,
-      init: () => ({ eta: 3 * 3600 + 12 * 60 }),
-      tick(s, solved) {
-        if (solved) {
-          const a = rnd(10, 99) / 10, b = rnd(10, 99) / 10;
-          return { line: `<span class="good">log a + log b = ${(9 + L(a)).toFixed(4)} + ${(9 + L(b)).toFixed(4)}</span>`, value: null };
-        }
-        s.eta += rnd(20, 90);
-        return { line: `${fmt(rnd(1e9, 9.9e9))} × ${fmt(rnd(1e9, 9.9e9))} = …計算中`, value: `打ち上げの ${Math.floor(s.eta / 3600)}時間${Math.floor(s.eta % 3600 / 60)}分 後` };
-      },
-      solvedValue: '残り 0.8秒 ／ 打ち上げ GO',
-    },
+    monitor: { sys: 'MISSION CONTROL' },
 
     steps: [
       { t: 'say', who: 'col', text: '打ち上げまで残り40分。最後の軌道計算、出たか？' },
@@ -172,7 +160,6 @@
       ],
       note: '重い掛け算・割り算・√ が、表を引いて足し引きするだけに。400年前の天文学者もこれで救われた',
     },
-    rewrite: { head: '# 軌道の周期', before: 'x = a * b　　　　　　　　 # 掛け算', after: 'x = 10 ** (log(a) + log(b))　# 足し算' },
     win: { sys: '探査機の軌道計算クリア！ GO for launch', col: '間に合った…！ 手計算の軌道で、打ち上げを続行する！' },
 
     epilogue: {

@@ -1,11 +1,5 @@
 // 負の数編（中1・正負の数・ブラーマグプタ・お店）
 (function () {
-  const LINES = [
-    '焼きそば 50 食 × 100円 = 5,000円（売上）',
-    '仕入れ（麺・野菜・ソース）= 8,000円',
-    'もうけ = 5,000 − 8,000 = <span class="bad">ERROR</span>',
-  ];
-
   HK.episode({
     id: 'negative', order: 10, grade: '中1', subject: '数学', unit: '正負の数', genre: 'お店・お金',
     title: '文化祭：模擬店の帳簿',
@@ -20,16 +14,7 @@
       solved: { src: 'img/negative/solved.jpg', caption: '会計が合って笑顔の生徒たち' },
     },
     colleague: { name: '店長（同じクラス）', short: '店' },
-    monitor: {
-      sys: 'SHOP LEDGER', task: '帳簿：もうけ ＝ 売上 − 仕入れ', label: 'もうけ', stuckAt: 64,
-      init: () => ({ i: 0 }),
-      tick(s, solved) {
-        if (solved) return { line: '<span class="good">(+5,000) + (−8,000) = −3,000（赤字）</span>', value: null };
-        const line = LINES[s.i++ % LINES.length];
-        return { line, value: '書けない' };
-      },
-      solvedValue: '−3,000円（赤字）',
-    },
+    monitor: { sys: 'SHOP LEDGER' },
 
     steps: [
       { t: 'say', who: 'col', text: 'おつかれー！ 焼きそば、50 食ぜんぶ売り切れたよ！' },
@@ -40,13 +25,16 @@
       { t: 'say', who: 'col', text: 'え、それってつまり、どういうこと？' },
       { t: 'talk', id: 'which' },
       { t: 'say', who: 'col', text: 'うそでしょ…。じゃあ帳簿の「もうけ」の欄、なんて書くの？' },
-      { t: 'say', who: 'me', text: '5,000 − 8,000 = …　小さい数から大きい数は、引けない…' },
+      { t: 'say', who: 'me', text: '式はこう。もうけ ＝ 売上 − 仕入れ ＝ 100円 × 50食 − 8,000円' },
+      { t: 'say', who: 'me', text: 'つまり 5,000 − 8,000 = …　小さい数から大きい数は、引けない…' },
+      { t: 'photo', who: 'me', src: 'img/negative/ledger.jpg', text: '書いては消して…もう 5 回目。' },
+      { t: 'say', who: 'col', text: '3,000円がどこにも書けないと、報告書の合計が合わないよ…。' },
       { t: 'say', who: 'col', text: '先生に出す報告、今日までなんだよね。どうする？' },
       { t: 'talk', id: 'plea' },
-      { t: 'say', who: 'col', text: '……ねえ、その帳簿の画面、なんか光ってない？' },
+      { t: 'say', who: 'col', text: '……ねえ、そのノート、なんか光ってない？' },
       { t: 'say', who: 'sys holo', text: '未知の接続を検出…　発信元：628年 インド' },
       { t: 'enter' },
-      { t: 'say', who: 'nap', text: 'む…ここはどこだ？ 光る板の中に、数がびっしり…。帳簿か、これは。' },
+      { t: 'say', who: 'nap', text: 'む…ここはどこだ？ 消し跡だらけの紙…。帳簿か、これは。' },
       { t: 'say', who: 'col', text: 'だ、だれ！？' },
       { t: 'say', who: 'nap', text: '私はブラーマグプタ。星の動きを計算している者だ。' },
       { t: 'say', who: 'nap', text: 'ふむ、5,000 入って 8,000 出ていった、と。…私の国の商人も、まさにこれで頭を抱えておった。' },
@@ -75,6 +63,7 @@
       { t: 'talk', id: 'explain' },
       { t: 'say', who: 'nap', text: 'ところで、きみたちの国では損のことを「赤字」と呼ぶそうだな。' },
       { t: 'say', who: 'nap', text: '昔、帳簿の損を赤いインクで書いたからだとか。…私の「−」と、どちらがわかりやすいかな？' },
+      { t: 'say', who: 'nap', text: '実は私は、0 も立派な「数」として、足し算や引き算の決まりを本に書いたのだ。' },
       { t: 'say', who: 'nap', text: 'きみのおかげで、この考えに確信が持てた。行く前に、何か聞いておきたいことはあるかね？' },
       { t: 'qa' },
       { t: 'say', who: 'nap', text: '数は、0 の向こうにも続いている。…では、さらばだ。' },
@@ -178,7 +167,6 @@
       note: '「−」がつくだけで、損したことと、その大きさが一度にわかる',
       button: 'この書き方で帳簿をつける',
     },
-    rewrite: { head: '# 帳簿：もうけの欄', before: 'もうけ = 売上 − 仕入れ　（引けないと ERROR）', after: 'もうけ = 売上 − 仕入れ　（負の数で書ける）' },
     win: { sys: '帳簿の計算クリア！ もうけ：−3,000円（赤字）', col: '明日は 1 食 160円にすれば、50 食で 8,000円。とんとんに戻せるね！' },
 
     epilogue: {

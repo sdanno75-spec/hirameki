@@ -379,3 +379,27 @@ header.bar{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bot
 .bubble.photo{padding:6px;display:flex;flex-direction:column;gap:6px}
 .bubble.photo img{display:block;width:100%;max-width:300px;border-radius:10px;cursor:zoom-in}
 .bubble.photo img.big{position:fixed;inset:0;margin:auto;max-width:94vw;max-height:94vh;width:auto;z-index:50;cursor:zoom-out;box-shadow:0 0 0 100vmax rgba(0,0,0,.8)}
+/* 天秤 */
+.bal{position:relative;height:120px;margin:8px 0}
+.bal-beam{position:absolute;left:4%;right:4%;top:18px;height:4px;background:var(--muted);border-radius:2px;transition:transform .5s;display:flex;justify-content:space-between}
+.bal-beam.tilt{transform:rotate(-8deg)}
+.bal-post{position:absolute;left:50%;top:18px;bottom:0;width:4px;margin-left:-2px;background:var(--muted)}
+.pan{margin-top:10px;width:44%;min-height:64px;padding:8px;border:1px solid var(--cyan);border-radius:0 0 14px 14px;background:rgba(60,231,255,.06);text-align:center;font-family:var(--mono);font-size:13px;line-height:1.6}
+.btnrow.ops{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+/* マス目 */
+.gridmap{display:grid;gap:1px;width:min(100%,260px);margin:6px auto;background:var(--line);border:1px solid var(--line)}
+.gridmap i{aspect-ratio:1;background:#070c18}
+.gridmap i.ax,.gridmap i.ay{background:#13223d}
+.gridmap i.o{background:var(--gold)}
+.gridmap i.t{background:rgba(255,200,87,.35);outline:2px solid var(--gold);outline-offset:-2px}
+.gridmap i.me{background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+/* 正方形のタイル */
+.sqrow{display:flex;align-items:flex-end;justify-content:center;gap:8px;flex-wrap:wrap}
+.sqbox{display:flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--mono);font-size:12px}
+.sqbox em{font-style:normal;color:var(--muted)}
+.sqg{display:grid;gap:1px;width:72px}
+.sqbox.c .sqg{width:104px}
+.sqg i{aspect-ratio:1;background:var(--cyan);opacity:.75}
+.sqbox.b .sqg i{background:var(--gold)}
+.sqbox.c .sqg i{background:var(--green)}
+.sqn{min-height:1.2em;color:var(--text)}

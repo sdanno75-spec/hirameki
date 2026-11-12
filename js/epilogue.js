@@ -19,7 +19,7 @@
     $('epiWrap').innerHTML = `
       <div class="epi-top"><div class="holo">${HK.portrait(ep, 'bust')}</div></div>
       <div class="epi-lines">
-        <p class="year" ${st()}>${e.year} ── ${HK.esc(e.place)}</p>
+        <p class="year" ${st()}>${HK.esc(e.yearLabel || e.year)} ── ${HK.esc(e.place)}</p>
         ${e.lines.map(l => `<p ${st()}>${l}</p>`).join('')}
       </div>
       <div class="big" ${st()}>数学のひらめきは、<br>${years}年後の世界も救っている。</div>

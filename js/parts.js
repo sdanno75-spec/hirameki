@@ -132,11 +132,110 @@
     doneBtn(cfg.done, resolve);
   }
 
+  // ---------- 天秤（両側に同じ操作） ----------
+  async function balance(cfg, run, resolve) {
+    const d = $('dock');
+    d.innerHTML = `<div class="puzzle"><div class="pz-label">${HK.esc(cfg.head)}</div>
+      <div class="ins-q">${cfg.q}</div>
+      <div class="bal"><div class="bal-beam" id="beam"><div class="pan" id="panL"></div><div class="pan" id="panR"></div></div><div class="bal-post"></div></div>
+      <div class="cnt" id="cnt"></div><div class="eqline" id="eql"></div><div class="btnrow ops" id="pBtn"></div></div>`;
+    const show = (l, r) => { $('panL').innerHTML = l; $('panR').innerHTML = r; };
+    show(cfg.left, cfg.right);
+    for (const st of cfg.steps) {
+      await new Promise(res => {
+        const br = $('pBtn');
+        br.innerHTML = st.choices.map((c, i) => `<button class="qr" data-i="${i}">${HK.esc(c.btn)}</button>`).join('');
+        br.querySelectorAll('button').forEach(b => b.onclick = async () => {
+          const c = st.choices[+b.dataset.i];
+          if (!c.ok) {
+            $('beam').style.transform = 'rotate(' + (c.tilt || 8) + 'deg)';
+            $('cnt').innerHTML = c.msg || '傾いた！';
+            await HK.sleep(1600);
+            $('beam').style.transform = '';
+            return;
+          }
+          br.innerHTML = '';
+          show(c.left, c.right);
+          $('cnt').innerHTML = c.msg || '釣り合ったまま！';
+          await W(900); res();
+        });
+      });
+      if (!HK.alive(run)) return;
+    }
+    await W(500);
+    $('eql').innerHTML = cfg.summary;
+    await W(900);
+    doneBtn(cfg.done, resolve);
+  }
+
+  // ---------- マス目で動かす ----------
+  async function grid(cfg, run, resolve) {
+    const d = $('dock');
+    const n = cfg.half || 5;
+    const cells = [];
+    for (let y = n; y >= -n; y--) for (let x = -n; x <= n; x++) {
+      const cls = [x === 0 && y === 0 ? 'o' : '', x === 0 ? 'ax' : '', y === 0 ? 'ay' : '', x === cfg.target.x && y === cfg.target.y ? 't' : ''].join(' ');
+      cells.push(`<i class="${cls}" data-x="${x}" data-y="${y}"></i>`);
+    }
+    d.innerHTML = `<div class="puzzle"><div class="pz-label">${HK.esc(cfg.head)}</div>
+      <div class="ins-q">${cfg.q}</div>
+      <div class="gridmap" style="grid-template-columns:repeat(${2 * n + 1},1fr)" id="gm">${cells.join('')}</div>
+      <div class="cnt" id="cnt"></div>
+      <div class="btnrow ops" id="pBtn"><button class="qr" data-d="-1,0">← 左へ</button><button class="qr" data-d="1,0">右へ →</button><button class="qr" data-d="0,1">↑ 上へ</button><button class="qr" data-d="0,-1">↓ 下へ</button></div>
+      <div class="eqline" id="eql"></div></div>`;
+    let px = 0, py = 0;
+    const word = (v, p, m) => v === 0 ? '' : (v > 0 ? p + ' ' + v : m + ' ' + -v);
+    const draw = () => {
+      d.querySelectorAll('#gm i.me').forEach(e => e.classList.remove('me'));
+      const c = d.querySelector(`#gm i[data-x="${px}"][data-y="${py}"]`);
+      if (c) c.classList.add('me');
+      $('cnt').innerHTML = `${HK.esc(cfg.originWord || '0')} から：<b>${[word(px, '右へ', '左へ'), word(py, '上へ', '下へ')].filter(Boolean).join('、') || 'まだ動いていない'}</b>`;
+    };
+    draw();
+    await new Promise(res => {
+      $('pBtn').querySelectorAll('button').forEach(b => b.onclick = async () => {
+        const [dx, dy] = b.dataset.d.split(',').map(Number);
+        px = Math.max(-n, Math.min(n, px + dx)); py = Math.max(-n, Math.min(n, py + dy));
+        draw();
+        if (px === cfg.target.x && py === cfg.target.y) { $('pBtn').innerHTML = ''; await W(700); res(); }
+      });
+    });
+    if (!HK.alive(run)) return;
+    $('eql').innerHTML = cfg.summary;
+    await W(900);
+    doneBtn(cfg.done, resolve);
+  }
+
+  // ---------- 直角三角形の3辺に正方形 ----------
+  async function squares(cfg, run, resolve) {
+    const d = $('dock');
+    const sq = (k, cls) => `<div class="sqbox ${cls}"><div class="sqg" style="grid-template-columns:repeat(${k},1fr);width:${k * 8}px">${'<i></i>'.repeat(k * k)}</div><b class="sqn"></b><em>${k} × ${k}</em></div>`;
+    d.innerHTML = `<div class="puzzle"><div class="pz-label">${HK.esc(cfg.head)}</div>
+      <div class="ins-q">${cfg.q}</div><div id="sqa"></div>
+      <div class="cnt" id="cnt"></div><div class="eqline" id="eql"></div><div class="btnrow" id="pBtn"></div></div>`;
+    for (const t of cfg.triangles) {
+      $('sqa').innerHTML = `<div class="sqrow">${sq(t.a, 'a')}<span class="op">＋</span>${sq(t.b, 'b')}<span class="op">と</span>${sq(t.c, 'c')}</div>`;
+      $('cnt').innerHTML = `直角をはさむ辺 ${t.a} と ${t.b}、斜めの辺 ${t.c}`;
+      await nextBtn('正方形のタイルを数える');
+      if (!HK.alive(run)) return;
+      const bs = $('sqa').querySelectorAll('.sqn');
+      for (const [i, k] of [t.a, t.b, t.c].entries()) { bs[i].textContent = k * k + ' 枚'; await W(500); }
+      $('cnt').innerHTML = `<b>${t.a * t.a} ＋ ${t.b * t.b} ＝ ${t.a * t.a + t.b * t.b}</b>　斜めの辺の正方形も <b>${t.c * t.c}</b> 枚！`;
+      await W(900);
+    }
+    $('eql').innerHTML = cfg.summary;
+    await W(900);
+    doneBtn(cfg.done, resolve);
+  }
+
   const wrap = fn => (cfg, run) => new Promise(resolve => { fn(cfg, run, resolve); });
   HK.parts = {
     calc,
     tiles: wrap((cfg, run, resolve) => (cfg.mode === 'stairs' ? stairs : count)(cfg, run, resolve)),
     numberline: wrap(numberline),
     approach: wrap(approach),
+    balance: wrap(balance),
+    grid: wrap(grid),
+    squares: wrap(squares),
   };
 })();

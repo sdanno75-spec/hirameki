@@ -56,6 +56,24 @@
     await wait(kind === 'sys' ? 550 : 650);
   };
 
+  // チャットに写真を送る（画像が無ければ何も出さずに進む）。タップで拡大
+  HK.sayPhoto = async function (who, src, caption, run) {
+    if (!HK.alive(run)) return;
+    const ok = await new Promise(r => { const im = new Image(); im.onload = () => r(true); im.onerror = () => r(false); im.src = src; });
+    if (!ok || !HK.alive(run)) return;
+    await HK.say(who, caption || '', run);
+    const m = $('chat').lastElementChild;
+    if (!m) return;
+    const b = m.querySelector('.bubble');
+    b.classList.add('photo');
+    const img = document.createElement('img');
+    img.src = src; img.alt = caption || '';
+    img.onclick = () => img.classList.toggle('big');
+    b.prepend(img);
+    $('chat').scrollTop = $('chat').scrollHeight;
+    await wait(1200);
+  };
+
   // ボタン1つで進む（エピローグへ、など）
   HK.ask = function (label, gold) {
     return new Promise(res => {

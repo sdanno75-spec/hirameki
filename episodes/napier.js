@@ -38,6 +38,7 @@
       { t: 'say', who: 'col', text: '太陽フレアの影響で、計算機が全部止まったらしい。復旧は早くても明日だ。' },
       { t: 'say', who: 'me', text: '明日…！？ 打ち上げは、今日のこの時間しかできないのに。' },
       { t: 'say', who: 'col', text: '残りは手計算でやるしかない。10 桁 × 10 桁の掛け算が…あと 200 回だ。' },
+      { t: 'photo', who: 'col', src: 'img/napier/handcalc.jpg', text: '見てくれ、1 回分でこれだ。' },
       { t: 'talk', id: 'feel' },
       { t: 'say', who: 'col', text: 'ひとつ 5 分としても、200 回で 1,000 分。…16 時間以上かかる。' },
       { t: 'say', who: 'me', text: '40 分しかないのに…' },

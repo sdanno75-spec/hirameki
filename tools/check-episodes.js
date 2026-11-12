@@ -65,7 +65,7 @@ for (const ep of HK.episodes.values()) {
   });
 
   // 画像（無ければ警告）
-  const imgs = [ep.person && ep.person.img, ep.photos && ep.photos.crisis.src, ep.photos && ep.photos.solved.src].filter(Boolean);
+  const imgs = [ep.person && ep.person.img, ep.photos && ep.photos.crisis.src, ep.photos && ep.photos.solved.src].concat(steps.filter(s => s.t === 'photo').map(s => s.src)).filter(Boolean);
   imgs.forEach(p => { if (!fs.existsSync(path.join(root, p))) warn(id, `画像がまだ無い: ${p}`); });
 }
 

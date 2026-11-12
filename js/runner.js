@@ -14,6 +14,7 @@
   async function step(ep, s, run, ctx) {
     switch (s.t) {
       case 'say': return HK.say(s.who, s.text, run);
+      case 'photo': return HK.sayPhoto(s.who, s.src, s.text, run);
       case 'alarm': HK.monitor.alarm(); HK.stage.alarm(); return;
       case 'talk': return HK.talk(ep.talks[s.id], faqsOf(ep), run);
       case 'enter': return HK.stage.enter(ep, run);

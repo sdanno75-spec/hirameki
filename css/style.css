@@ -374,3 +374,8 @@ header.bar{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bot
 .tag{flex:none;font-size:11px;padding:2px 8px;border-radius:99px;margin-top:2px}
 .tag.true{border:1px solid var(--green);color:var(--green)}
 .tag.legend{border:1px solid var(--gold);color:var(--gold)}
+
+/* チャット内の写真 */
+.bubble.photo{padding:6px;display:flex;flex-direction:column;gap:6px}
+.bubble.photo img{display:block;width:100%;max-width:300px;border-radius:10px;cursor:zoom-in}
+.bubble.photo img.big{position:fixed;inset:0;margin:auto;max-width:94vw;max-height:94vh;width:auto;z-index:50;cursor:zoom-out;box-shadow:0 0 0 100vmax rgba(0,0,0,.8)}

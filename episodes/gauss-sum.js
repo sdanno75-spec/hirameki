@@ -9,8 +9,8 @@
     person: {
       name: 'カール・フリードリヒ・ガウス', short: 'ガウス', en: 'CARL FRIEDRICH GAUSS', years: '1777 – 1855', country: 'ドイツ',
       role: '数学者・天文学者（「数学の王」）',
-      img: 'img/gauss-sum/portrait.jpg',
-      bust: { pos: '50% 20%', size: '140%' }, face: { pos: '50% 16%', size: '330%' },
+      img: 'img/gauss-sum/portrait.webp',
+      bust: { pos: '30% 30%', size: '155%' }, face: { pos: '44% 26%', size: '320%' },
     },
     photos: {
       crisis: { src: 'img/gauss-sum/crisis.jpg', caption: '来場者を1人ずつ数えて疲れ切ったスタッフ' },

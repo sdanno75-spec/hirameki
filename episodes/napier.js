@@ -40,7 +40,7 @@
       { t: 'say', who: 'col', text: '残りは手計算でやるしかない。軌道の候補 80 通りぶん、1 周の時間を出すぞ。' },
       { t: 'say', who: 'col', text: '式はこれだ。T = 2π × √( a × a × a ÷ GM )' },
       { t: 'say', who: 'col', text: 'a は軌道の半径 6,778,137 m。GM は地球の重力の定数 398,600,441,800,000。' },
-      { t: 'photo', who: 'col', src: 'img/napier/handcalc.jpg', text: '見てくれ、候補 1 つ分でこれだ。' },
+      { t: 'photo', who: 'col', src: 'img/napier/handcalc.webp', text: '見てくれ、候補 1 つ分でこれだ。' },
       { t: 'talk', id: 'feel' },
       { t: 'say', who: 'col', text: '1 つ 30 分で、80 通り。…40 時間かかる。' },
       { t: 'say', who: 'me', text: '40 分しかないのに…' },

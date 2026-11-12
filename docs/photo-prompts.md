@@ -1,4 +1,6 @@
-# 写真のプロンプト一覧（まだ届いていない分）
+# 写真のプロンプト一覧
+
+**まだ届いていない写真：23、24、25、26、27**（画像を受け取るたびに、この一覧を最新にする）
 
 できた画像は、チャットにそのまま貼ってください。保存と名前の付け替え、肖像の切り出し位置の調整はこちらでやります。
 
@@ -23,75 +25,75 @@
 
 ## ガウス編（数列の和・ライブ会場）
 
-**9. 困った現場**
+**9. 困った現場**（済み）
 ```
 Photorealistic photo, vertical 4:5. The entrance of a large concert hall at night. A long queue of fans stretches into the distance. Exhausted young event staff in black staff T-shirts hold hand tally counters and clipboards, overwhelmed, one wiping sweat from his forehead. Stage lights glow in the background, crowded busy atmosphere. Leave some open space in the lower center of the frame. No readable text, no logos, no watermark.
 ```
 
-**10. 解決**
+**10. 解決**（済み）
 ```
 Photorealistic photo, vertical 4:5. Inside a packed concert venue at night, the show has started, colorful stage lights and a cheering crowd with raised hands. In the foreground, the event staff smile in relief and bump fists. Energetic, joyful atmosphere. Leave some open space in the lower center of the frame. No readable text, no logos, no watermark.
 ```
 
-**11. 肖像：ガウス**
+**11. 肖像：ガウス**（済み）
 ```
 Photorealistic portrait photo, vertical 4:5, in the style of a 19th-century painted portrait brought to life. Carl Friedrich Gauss, a German mathematician around 60, with white hair, a sharp intelligent gaze and a slight smile, wearing a black velvet skullcap, a dark coat and a white cravat. He sits in a wooden chair beside a desk with papers, a globe and a small telescope, in a dim study with warm window light. Upper body and face clearly visible, facing the viewer. No text, no watermark.
 ```
 
-**15. 証拠の写真：足し算の集計表**
+**15. 証拠の写真：足し算の集計表**（済み）
 ```
 A photorealistic close-up of a clipboard on a concert hall staff desk backstage. The paper shows a long handwritten column of running additions: "1+2=3", "3+3=6", "6+4=10", "10+5=15" ... continuing down the page, with one line crossed out twice and the numbers drifting out of alignment, and "37?" circled near the bottom. A pen with a chewed cap, a staff lanyard, a stopwatch showing about 15 minutes. Blurry stage lights in the background. Rushed, stressed mood. Landscape 4:3, no faces, no logos.
 ```
 
 ## 負の数編
 
-**13. 証拠の写真：書けない帳簿**
+**13. 証拠の写真：書けない帳簿**（済み）
 ```
 A photorealistic close-up of a school festival stall table after closing. An open notebook used as an account ledger, handwritten in neat pencil: "売上 5,000円", "仕入れ 8,000円", and "もうけ = 5,000 − 8,000 =" followed by a blank space that has been erased many times, leaving grey smudges and a torn spot. Next to it a messy pile of receipts, a cash box with a few coins, a yakisoba spatula. Warm evening light, slightly worried mood. Landscape 4:3, no faces, no logos.
 ```
 
 ## 平方根編
 
-**14. 証拠の写真：試し計算**
+**14. 証拠の写真：試し計算**（済み）
 ```
 A photorealistic close-up of a designer's desk at night. A sheet of drafting paper with a drawn square labeled "2 m²" and, beside it, handwritten trial calculations getting longer and longer: "1.4 × 1.4 = 1.96", "1.41 × 1.41 = 1.9881", "1.414 × 1.414 = 1.999396", "1.4142 × 1.4142 = 1.99996164 ...", each with a question mark. A calculator display shows "1.41421356". A few square tiles that do not quite fit the drawn square. Desk lamp lighting, frustrated mood. Landscape 4:3, no faces, no logos.
 ```
 
 ## 方程式編（クラスTシャツ）
 
-**16. 肖像：アル＝フワーリズミー**（本人の顔は記録に残っていない。当時の学者らしい姿で）
+**16. 肖像：アル＝フワーリズミー**（済み）（本人の顔は記録に残っていない。当時の学者らしい姿で）
 ```
 Photorealistic portrait photo, vertical 4:5, in the style of a classical painted portrait brought to life. A 9th-century Persian scholar in Baghdad, around 45, with a neatly trimmed dark beard, thoughtful warm eyes and a calm expression, wearing a white turban and a dark blue robe. He sits at a low wooden desk with open manuscripts, a reed pen, an inkwell and a small brass balance scale, in the House of Wisdom library with arched windows and warm lamp light. Upper body and face clearly visible, facing the viewer. No text, no watermark.
 ```
 
-**17. 困った現場**
+**17. 困った現場**（済み）
 ```
 Photorealistic photo, vertical 4:5. A Japanese junior high school classroom after school. Three students in school uniforms crowd around a laptop showing an online T-shirt order form, a printed price quote and a calculator on the desk, one student holding her head in frustration, a wall clock showing late afternoon. Slightly tense, hurried mood. Leave some open space in the lower center of the frame. No readable text, no logos, no watermark.
 ```
 
-**18. 解決**
+**18. 解決**（済み）
 ```
 Photorealistic photo, vertical 4:5. A Japanese junior high school class at a school festival, all students wearing matching colorful class T-shirts, cheering and taking a group photo in the schoolyard on a sunny day. Joyful, energetic mood. Leave some open space in the lower center of the frame. No readable text, no logos, no watermark.
 ```
 
-**19. 証拠の写真：1 枚ずつ試した計算用紙**
+**19. 証拠の写真：1 枚ずつ試した計算用紙**（済み）
 ```
 A photorealistic close-up of a school desk. A sheet of notebook paper with the handwritten equation "1,200 × □ + 6,800 = 50,000" at the top, and below it many trial lines: "□=30 → 42,800", "□=31 → 44,000", "□=32 → 45,200", "□=33 → 46,400" ... with arrows, crossed-out numbers and "まだ足りない？" in the margin. A T-shirt price quote sheet, a calculator and a pencil beside it. Afternoon classroom light, anxious mood. Landscape 4:3, no faces, no logos.
 ```
 
 ## 座標編（文化祭ゲーム）
 
-**20. 肖像：デカルト**
+**20. 肖像：デカルト**（済み）
 ```
 Photorealistic portrait photo, vertical 4:5, in the style of a 17th-century Dutch painted portrait brought to life. René Descartes, a French philosopher and mathematician around 50, with shoulder-length dark wavy hair, a thin moustache, a small tuft under the lip and a thoughtful gaze, wearing a black coat with a plain white collar. He sits by a window in a quiet study with books, a quill and a sheet of paper with a drawn grid. Upper body and face clearly visible, facing the viewer. No text, no watermark.
 ```
 
-**21. 困った現場**
+**21. 困った現場**（済み）
 ```
 Photorealistic photo, vertical 4:5. A Japanese high school computer room in the evening. Two students in school uniforms stare at a laptop screen showing a simple top-down pixel-art game map where a treasure chest is stuck inside a tree, one student facepalming, a hand-drawn map with sticky notes on the desk. Frustrated, hurried mood. Leave some open space in the lower center of the frame. No readable text, no logos, no watermark.
 ```
 
-**22. 解決**
+**22. 解決**（済み）
 ```
 Photorealistic photo, vertical 4:5. A Japanese school festival classroom turned into a game corner, visitors and children happily playing a pixel-art adventure game on monitors, a line of people waiting, the student creators smiling and high-fiving in the foreground. Bright, joyful mood. Leave some open space in the lower center of the frame. No readable text, no logos, no watermark.
 ```
